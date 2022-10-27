@@ -50,7 +50,8 @@ If argument did not called, script will prompt in initialization.
 
 ### `-t`, `--type`
 
-**Type**: Array: `anime`, `manga`
+**Type**: String\
+**Options**: `anime`, `manga`
 
 Select which media type to export.
 
