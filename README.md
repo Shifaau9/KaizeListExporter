@@ -23,14 +23,16 @@ This script mainly used for [nattadasu/animeManga-autoBackup](https://github.com
 This script may requires Python 3.6 or greater. You may need to install required dependencies by running following command in terminal/command prompt:
 
 ```bash
-python -m pip -r requirements.txt
+python -m pip install -r requirements.txt
 ```
 
 Or
 
 ```bash
-pip -r requirements.txt
+pip install -r requirements.txt
 ```
+
+**Note**: Depends on the OS and distro, use `python3` to `python` to avoid any issue.
 
 ## Usage
 
