@@ -128,9 +128,12 @@ def readKaizeLists():
         page = 0
         items = 0
         entryCount = counts[status]
+        # Calculate the number of pages to scrape, 50 items per page, round up
+        pages = int(entryCount / 50) + (entryCount % 50 > 0)
         while items < entryCount:
             url = 'https://kaize.io/user/' + variables['username'] + '/ajax-list/' + listType + '/' + status + '?page=' + str(page) + "&elements_per_page=50"
-            print ("Scraping " + status + " "  + variables['listType'] + ". Page " + str(page + 1))
+            # Print progress, each line with CR, no newline and try to clear the line
+            print ("[" + str(page + 1) + "/" + str(pages) + "] Scraping " + status + " "  + variables['listType'], end='\r')
             req = requests.get(url)
             bs = BeautifulSoup(req.text, features="html.parser")
             entries = bs.find_all("div", {"class": "list-element"})
