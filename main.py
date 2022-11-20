@@ -118,20 +118,18 @@ def readKaizeLists():
         # Loop through the list statuses
         for status in lookup:
             label = status.text
-            match label:
-                case 'Watching':
-                    counts['watching'] = int(label.replace(' Watching', ''))
-                case 'Completed':
-                    counts['completed'] = int(label.replace(' Completed', ''))
-                case 'On-hold':
-                    counts['on-hold'] = int(label.replace(' On-hold', ''))
-                case 'Dropped':
-                    counts['dropped'] = int(label.replace(' Dropped', ''))
-                case 'Plan to watch':
-                    counts['plan-to-watch'] = int(label.replace(' Plan to watch', ''))
-                case _:
-                    print('Unknown status: ' + label)
-
+            if 'Watching' in label:
+                counts['watching'] = int(label.replace(' Watching', ''))
+            elif 'Completed' in label:
+                counts['completed'] = int(label.replace(' Completed', ''))
+            elif 'Plan to watch' in label:
+                counts['plan-to-watch'] = int(label.replace(' Plan to watch', ''))
+            elif 'On-hold' in label:
+                counts['on-hold'] = int(label.replace(' On-hold', ''))
+            elif 'Dropped' in label:
+                counts['dropped'] = int(label.replace(' Dropped', ''))
+            else:
+                print('Unknown status: ' + label)
     elif variables['listType'] == 'manga':
         listType = 'mangas'
 
@@ -149,19 +147,18 @@ def readKaizeLists():
         # Loop through the list statuses
         for status in lookup:
             label = status.text
-            match label:
-                case 'Reading':
-                    counts['reading'] = int(label.replace(' Reading', ''))
-                case 'Completed':
-                    counts['completed'] = int(label.replace(' Completed', ''))
-                case 'On-hold':
-                    counts['on-hold'] = int(label.replace(' On-hold', ''))
-                case 'Dropped':
-                    counts['dropped'] = int(label.replace(' Dropped', ''))
-                case 'Plan to read':
-                    counts['plan-to-read'] = int(label.replace(' Plan to read', ''))
-                case _:
-                    print('Unknown status: ' + label)
+            if 'Reading' in label:
+                counts['reading'] = int(label.replace(' Reading', ''))
+            elif 'Completed' in label:
+                counts['completed'] = int(label.replace(' Completed', ''))
+            elif 'Plan to read' in label:
+                counts['plan-to-read'] = int(label.replace(' Plan to read', ''))
+            elif 'On-hold' in label:
+                counts['on-hold'] = int(label.replace(' On-hold', ''))
+            elif 'Dropped' in label:
+                counts['dropped'] = int(label.replace(' Dropped', ''))
+            else:
+                print('Unknown status: ' + label)
 
     # start scraping the lists in each status
     entryList  = [] 
