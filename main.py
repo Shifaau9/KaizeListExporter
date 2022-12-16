@@ -96,7 +96,7 @@ def readKaizeLists():
     # set a variable for the global list statuses
     statuses = [
         'completed',
-        'on-hold',
+        'on_hold',
         'dropped'
     ]
 
@@ -107,7 +107,7 @@ def readKaizeLists():
         # Append list statuses exclusive to anime
         statuses.extend([
             'watching',
-            'plan-to-watch'
+            'plan_to_watch'
         ])
 
         # Get a statistic of the user's anime list
@@ -123,9 +123,9 @@ def readKaizeLists():
             elif 'Completed' in label:
                 counts['completed'] = int(label.replace(' Completed', ''))
             elif 'Plan to watch' in label:
-                counts['plan-to-watch'] = int(label.replace(' Plan to watch', ''))
+                counts['plan_to_watch'] = int(label.replace(' Plan to watch', ''))
             elif 'On-hold' in label:
-                counts['on-hold'] = int(label.replace(' On-hold', ''))
+                counts['on_hold'] = int(label.replace(' On-hold', ''))
             elif 'Dropped' in label:
                 counts['dropped'] = int(label.replace(' Dropped', ''))
             else:
@@ -136,7 +136,7 @@ def readKaizeLists():
         # Append list statuses exclusive to manga
         statuses.extend([
             'reading',
-            'plan-to-read'
+            'plan_to_read'
         ])
 
         # Get a statistic of the user's manga list
@@ -152,9 +152,9 @@ def readKaizeLists():
             elif 'Completed' in label:
                 counts['completed'] = int(label.replace(' Completed', ''))
             elif 'Plan to read' in label:
-                counts['plan-to-read'] = int(label.replace(' Plan to read', ''))
+                counts['plan_to_read'] = int(label.replace(' Plan to read', ''))
             elif 'On-hold' in label:
-                counts['on-hold'] = int(label.replace(' On-hold', ''))
+                counts['on_hold'] = int(label.replace(' On-hold', ''))
             elif 'Dropped' in label:
                 counts['dropped'] = int(label.replace(' Dropped', ''))
             else:
